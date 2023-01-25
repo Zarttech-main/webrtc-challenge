@@ -30,13 +30,30 @@ Thanks and Good Luck.
 ## Setup procedure
 
 1. Clone this repository
-   `git clone git@github.com:Tetranyble/webrtc-challenge.git`
+    `git clone git@github.com:Tetranyble/webrtc-challenge.git`
 2. cd into project directory
-   `cd webrtc-challenge`
+    `cd webrtc-challenge`
 3. install Angular dependencies
-   `docker compose up`
+  `npm install`
+4. next up start angular development server
+  `npm start`
 
+## Setup Nodejs Signaling Server
+1. next cd into server directory
+  `cd server`
+2. install node dependencies in the server directory
+  `npm install`
+3. start node server
+  `npm start`
+The signal server should now be listening on port 3000
+
+## Setup Peer server
+1. install peerjs server
+2. `npm install peer -g`
+2. start peerjs Server
+  `peerjs --port 3001`
 
 ** visit `http://localhost:4200` **
 
-#Note: this is with the assumption the your system has docker running.
+you may connect multiple users, however you might experience drag with your device.
+Also, for a production base version. The 3 application must be containerize for ease of scaling.

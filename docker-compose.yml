@@ -1,0 +1,31 @@
+version: '3'
+
+services:
+  frontend:
+    image: angular:1.0.0
+    build: angular
+    container_name: frontend
+    ports:
+      - 4200:80
+    depends_on:
+      - server
+      - peer
+
+  server:
+    image: server:1.0.0
+    build: server
+    container_name: server
+    ports:
+      - 3000:3000
+    depends_on:
+      - peer
+
+  peer:
+    image: peerjs/peerjs-server
+    container_name: peer
+    command: peerjs --port 3001
+    ports:
+      - 3001:3001
+
+
+
